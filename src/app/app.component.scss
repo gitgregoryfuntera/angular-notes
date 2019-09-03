@@ -1,0 +1,47 @@
+.nav-card {
+    width: 50px;
+    height: 770px;
+    position: absolute;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+.nav-card-fullscreen {
+    width: 0;
+    display: none;
+}
+
+.icon-container {
+    position: absolute;
+    left: 9px;
+}
+
+.nav-drawer {
+    height: 800px;
+    position: absolute;
+    left: 72px;
+}
+
+
+// drawer list
+.drawer-list {
+    width: 300px;
+}
+
+.mat-list-item {
+    cursor: pointer;
+}
+
+.note-item-header {
+    height: 30px;
+    .note-title {
+        margin: 0;
+        padding: 0;
+        width: 160px;
+    }
+    .note-title-icons {
+        position: absolute;
+        right: 13px;
+        top: 4px;
+    }
+}

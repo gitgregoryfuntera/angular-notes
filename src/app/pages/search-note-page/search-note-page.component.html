@@ -1,0 +1,33 @@
+<div class="content">
+    <div class="search-box">
+        <mat-form-field class="input-width">
+            <input
+                #search 
+                class="mat-headline" 
+                matInput 
+                placeholder="Search here"
+                (keyup)="onSearch(search.value)"
+                (blur)="onSearch(search.value)"
+            >
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="search-content">
+        <mat-list class="drawer-list" role="list">
+            <mat-list-item role="listitem" 
+                *ngFor="let note of notes"
+                [routerLink]="['/show-note/', note.id]" 
+                routerLinkActive="router-link-active" 
+            >
+                <div class="note-item-header" matLine>
+                    <div class="note-title">
+                        <h4 class="mat-title">{{ note.title }}</h4> 
+                    </div>
+                </div>
+                <p class="mat-small" matLine>{{ note.date.seconds*1000 | date }}</p>
+                <h6 class="mat-body-1" matLine>{{  note.body | bodyTagSanitizer }}</h6>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>

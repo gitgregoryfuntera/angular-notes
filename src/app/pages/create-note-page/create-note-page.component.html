@@ -1,0 +1,38 @@
+<div *ngIf="note"
+    [ngClass]="{'content': !isFullscreen, 'content-fullscreen': isFullscreen}">
+    <div class="header">
+        <mat-form-field class="note-title mt-10 ml-10">
+            <input matInput placeholder="Title" 
+                [(ngModel)]="note.title" 
+                (blur)="onSave()"
+            >
+            <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+        <div class="header-buttons ml-10">
+            <button class="m-10" 
+                mat-raised-button 
+                aria-label="Cancel" 
+                color="warn"
+                (click)="onCancel()"
+            >Cancel
+            </button>
+            <button class="m-10" 
+                mat-raised-button 
+                aria-label="Done" 
+                color="primary"
+                (click)="onDone()"
+            >Done
+            </button>
+        </div>
+    </div>
+    <div>
+        <angular-editor
+            [(ngModel)]="note.body"
+            [placeholder]="'Enter something here...'" 
+            [config]="editorConfig"
+            (blur)="onSave()"
+        >
+        </angular-editor>
+    </div>
+</div>
+

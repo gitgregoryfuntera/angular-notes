@@ -1,0 +1,31 @@
+.content {
+    width: 1080px;
+}
+
+.search-box {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.input-width {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.search-content {
+    width: 52%;
+    margin: auto;
+}
+
+.note-item-header {
+    height: 30px;
+    .note-title {
+        margin: 0;
+        padding: 0;
+        width: 160px;
+    }
+}
+
+.mat-list-item {
+    cursor: pointer;
+}
