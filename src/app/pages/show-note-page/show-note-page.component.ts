@@ -20,10 +20,11 @@ export class ShowNotePageComponent implements OnInit {
   noteID: string;
   isFullscreen: boolean = false;
 
-  private editorConfig: AngularEditorConfig = {
+  editorConfig: AngularEditorConfig = {
     editable: true,
     minHeight: '750px',
     maxHeight: 'auto',
+    showToolbar: true,
   }
 
   constructor(
@@ -47,10 +48,7 @@ export class ShowNotePageComponent implements OnInit {
   }
 
   onDelete() {
-    this.noteSvc.deleteNoteDocument(this.noteSvc.noteID).then(() => {
-        this.functionalSvc.getDrawerFlag(false);
-        this.functionalSvc.getFullscreenFlag(false);
-    });
+    this.noteSvc.deleteNoteDocument(this.noteSvc.noteID);
   }
 
   onFullscreen() {
@@ -59,7 +57,6 @@ export class ShowNotePageComponent implements OnInit {
   }
 
   onSave() {
-    console.log(this.note);
     this.noteSvc.updateNoteDocument(this.noteSvc.noteID, this.note)
   }
 }

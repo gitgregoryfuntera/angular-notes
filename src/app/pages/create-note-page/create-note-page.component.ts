@@ -18,7 +18,7 @@ export class CreateNotePageComponent implements OnInit {
   note: Note;
   isFullscreen: boolean = true;
 
-  private editorConfig: AngularEditorConfig = {
+  editorConfig: AngularEditorConfig = {
     editable: true,
     minHeight: '750px',
     maxHeight: 'auto',
@@ -45,7 +45,7 @@ export class CreateNotePageComponent implements OnInit {
   }
 
   onDone() {
-    console.log('why')
+    // console.log('why')
     this.router.navigate([`show-note/${this.noteSvc.noteID}`]).then(res => {
       this.functionalSvc.getFullscreenFlag(false);
     });
@@ -58,7 +58,7 @@ export class CreateNotePageComponent implements OnInit {
   }
 
   onSave() {
-    console.log(this.note);
+    // console.log(this.note);
     this.noteSvc.updateNoteDocument(this.noteSvc.noteID, this.note);
   }
 
